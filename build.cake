@@ -27,7 +27,7 @@ var codecovToken = "";
 
 var isAppVeyor = AppVeyor.IsRunningOnAppVeyor;
 
-var version = "1.0.0";
+var version = "2.0.0";
 
 
 ///////////////////////////////////////////////////////////////////////////////
