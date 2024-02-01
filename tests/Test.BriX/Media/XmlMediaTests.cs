@@ -285,5 +285,19 @@ namespace BriX.Media.Test
                 ).Message
             );
         }
+
+        [Fact]
+        public void EscapesXmlChars()
+        {
+            var media = new XmlMedia();
+            media.Block("root")
+                .Prop("key")
+                .Put("<root><key>value</key></root>");
+
+            Assert.Contains(
+                "&lt;root&gt;&lt;key&gt;value&lt;/key&gt;&lt;/root&gt;",
+                media.Content().ToString()
+            );
+        }
     }
 }
