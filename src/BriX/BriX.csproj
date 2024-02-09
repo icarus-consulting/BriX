@@ -1,35 +1,35 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <DocumentationFile>$(MSBuildThisFileDirectory)bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Authors>ICARUS Consulting GmbH</Authors>
-    <Description>Build object oriented data structures and format them when needed.</Description>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <NeutralLanguage>en</NeutralLanguage>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Copyright>Copyright (c) 2022 ICARUS Consulting GmbH</Copyright>
-    <PackageTags>data structures, xml, json, intermediate, oop, cactoos</PackageTags>
-    <PackageProjectUrl>https://github.com/icarus-consulting/BriX</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/icarus-consulting/BriX.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>https://github.com/icarus-consulting/BriX/releases</PackageReleaseNotes>
-    <Version>5.0.2</Version>
-    <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\..\sgKey.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <DocumentationFile>$(MSBuildThisFileDirectory)bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <Authors>ICARUS Consulting GmbH</Authors>
+        <Description>Build object oriented data structures and format them when needed.</Description>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <NeutralLanguage>en</NeutralLanguage>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <Copyright>Copyright (c) 2022 ICARUS Consulting GmbH</Copyright>
+        <PackageTags>data structures, xml, json, intermediate, oop, cactoos</PackageTags>
+        <PackageProjectUrl>https://github.com/icarus-consulting/BriX</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/icarus-consulting/BriX.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageReleaseNotes>https://github.com/icarus-consulting/BriX/releases</PackageReleaseNotes>
+        <Version>5.1.0</Version>
+        <SignAssembly>True</SignAssembly>
+        <AssemblyOriginatorKeyFile>..\..\sgKey.snk</AssemblyOriginatorKeyFile>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <Content Include="..\..\LICENSE.txt">
-      <PackagePath></PackagePath>
-      <Visible>false</Visible>
-    </Content>
-  </ItemGroup>
+    <ItemGroup>
+        <Content Include="..\..\LICENSE.txt">
+            <PackagePath></PackagePath>
+            <Visible>false</Visible>
+        </Content>
+    </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Yaapii.JSON" Version="13.3.3" />
-    <PackageReference Include="Yaapii.Atoms" Version="3.0.0" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Yaapii.JSON" Version="13.3.3" />
+        <PackageReference Include="Yaapii.Atoms" Version="3.0.0" />
+    </ItemGroup>
 
 </Project>
