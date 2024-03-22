@@ -52,5 +52,19 @@ namespace BriX.Test
                 media.Content().ToString(System.Xml.Linq.SaveOptions.DisableFormatting)
             );
         }
+
+        [Fact]
+        public void PrintsAlternativeIfConditionNotMatched()
+        {
+            var media = new XmlMedia().Block("root");
+            new BxConditional(() => false,
+                () => new BxProp("Matched", "true"),
+                () => new BxProp("Matched", "false")
+            ).Print(media);
+            Assert.Equal(
+                "<root><Matched>false</Matched></root>",
+                media.Content().ToString(System.Xml.Linq.SaveOptions.DisableFormatting)
+            );
+        }
     }
 }

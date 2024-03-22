@@ -39,14 +39,36 @@ namespace BriX
 
         /// <summary>
         /// Prints only if the given condition is matched.
+        /// Otherwise prints the alternative.
+        /// </summary>
+        public BxConditional(bool condition, Func<IBrix> consequence, Func<IBrix> alternative) : this(() => condition, consequence, alternative)
+        { }
+
+        /// <summary>
+        /// Prints only if the given condition is matched.
         /// Otherwise does nothing.
         /// </summary>
-        public BxConditional(Func<bool> condition, Func<IBrix> consequence) : base(() =>
+        public BxConditional(Func<bool> condition, Func<IBrix> consequence) : this(
+            condition,
+            consequence,
+            () => new BxNothing()
+        )
+        { }
+
+        /// <summary>
+        /// Prints only if the given condition is matched.
+        /// Otherwise prints the alternative.
+        /// </summary>
+        public BxConditional(Func<bool> condition, Func<IBrix> consequence, Func<IBrix> alternative) : base(()=>
         {
-            IBrix result = new BxNothing();
-            if (condition())
+            IBrix result;
+            if(condition())
             {
                 result = consequence();
+            }
+            else
+            {
+                result = alternative();
             }
             return result;
         })
