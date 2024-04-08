@@ -40,5 +40,19 @@ namespace BriX.Test
                 media.Content().ToString(System.Xml.Linq.SaveOptions.DisableFormatting)
             );
         }
+
+        [Fact]
+        public void AcceptsBool()
+        {
+            var media = new XmlMedia().Block("root");
+
+            new BxProp("Key", true)
+                .Print(media);
+
+            Assert.Equal(
+                "<root><Key>True</Key></root>",
+                media.Content().ToString(System.Xml.Linq.SaveOptions.DisableFormatting)
+            );
+        }
     }
 }

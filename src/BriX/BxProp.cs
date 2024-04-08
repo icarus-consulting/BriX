@@ -109,6 +109,12 @@ namespace BriX
         /// <summary>
         /// A property which has a name and a value.
         /// </summary>
+        public BxProp(string name, bool value) : this(name, () => value.ToString(CultureInfo.InvariantCulture))
+        { }
+
+        /// <summary>
+        /// A property which has a name and a value.
+        /// </summary>
         public BxProp(string name, Func<string> value)
         {
             this.name = name;
