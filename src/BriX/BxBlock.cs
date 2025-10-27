@@ -74,7 +74,8 @@ namespace BriX
 
         public T Print<T>(IMedia<T> media)
         {
-            return this.content.Print(media.Block(this.name));
+            this.content.Print(media.Block(this.name));
+            return media.Content();
         }
 
         public override string ToString()

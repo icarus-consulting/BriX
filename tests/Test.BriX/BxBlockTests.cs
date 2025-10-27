@@ -55,5 +55,29 @@ namespace BriX.Test
                 media.Content().ToString(SaveOptions.DisableFormatting)
             );
         }
+
+        [Fact]
+        public void CascadeBlocks()
+        {
+            var media = new JsonMedia();
+            var res =
+                new BxBlock("editor",
+                    new BxBlock("body",
+                        new BxBlock("scene",
+                            new BxBlock("display",
+                                new BxBlock("entity",
+                                    new BxProp("handle", "robot"),
+                                    new BxProp("stateEntityType", "machine")
+                                )
+                            )
+                        )
+                    )
+                ).Print(media);
+
+            Assert.Equal(
+                media.Content().ToString(),
+                res.ToString()
+            );
+        }
     }
 }
