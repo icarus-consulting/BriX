@@ -59,7 +59,7 @@ namespace BriX
         /// </summary>
         public BxRebuilt(IText content) : this(
             () => XDocument.Parse(content.AsString()),
-            ()=> content.AsString() == "",
+            () => content.AsString() == "",
             true
         )
         { }
@@ -73,7 +73,7 @@ namespace BriX
         /// <summary>
         /// A brix which has been transported as raw data.
         /// </summary>
-        private BxRebuilt(XNode node, bool isRoot) : this(() => node,()=> node.ToString() == "", isRoot)
+        private BxRebuilt(XNode node, bool isRoot) : this(() => node, () => node.ToString() == "", isRoot)
         { }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace BriX
         /// A brix which has been transported as raw data.
         /// </summary>
         public BxRebuilt(IScalar<XElement> data, Func<bool> isEmpty) : this(
-            new ScalarOf<IBrix>(()=>
+            new ScalarOf<IBrix>(() =>
             {
                 IBrix result = new BxNothing();
                 if (!isEmpty())
@@ -165,7 +165,8 @@ namespace BriX
 
         public T Print<T>(IMedia<T> media)
         {
-            return this.brix.Value().Print(media);
+            this.brix.Value().Print(media);
+            return media.Content();
         }
     }
 }

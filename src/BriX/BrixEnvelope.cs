@@ -43,7 +43,8 @@ namespace BriX
 
         public T Print<T>(IMedia<T> media)
         {
-            return this.brix.Value().Print(media);
+            this.brix.Value().Print(media);
+            return media.Content();
         }
     }
 }
