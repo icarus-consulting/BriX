@@ -28,7 +28,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Yaapii.JSON" Version="13.4.0" />
+        <PackageReference Include="Yaapii.JSON" Version="13.4.1" />
     </ItemGroup>
 
 </Project>
