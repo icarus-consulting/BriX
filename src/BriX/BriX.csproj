@@ -17,6 +17,7 @@
     <Version>6.0.1</Version>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\sgKey.snk</AssemblyOriginatorKeyFile>
+    <UseProjectReferences>False</UseProjectReferences>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="..\..\LICENSE.txt">
@@ -26,7 +27,7 @@
   </ItemGroup>
   <ItemGroup></ItemGroup>
   <Choose>
-    <When Condition="'$(Configuration)'=='Release'">
+    <When Condition="'$(UseProjectReferences)'=='True'">
       <ItemGroup>
         <ProjectReference Include="..\..\..\Yaapii.JSON\src\Yaapii.JSON\Yaapii.JSON.csproj" />
       </ItemGroup>
